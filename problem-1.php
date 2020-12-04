@@ -9,16 +9,15 @@
          * @return int $numberOfServers
          */
         public function serverLoad(){
-            $numberOfServers = 0; 
+            // was incorrect $numberOfServers = 0; 
             foreach($this->loads as $load){
-                $numberOfServers;
                 if($load < 50){
-                    $numberOfServers = $this->numberOfServers/2;
+                    $this->numberOfServers = $this->numberOfServers/2;
                 }else{
-                    $numberOfServers = (2 * $this->numberOfServers) + 1;
+                    $this->numberOfServers = (2 * $this->numberOfServers) + 1;
                 }
             }
-            return $numberOfServers;
+            return $this->numberOfServers;
         }
 
         /**
